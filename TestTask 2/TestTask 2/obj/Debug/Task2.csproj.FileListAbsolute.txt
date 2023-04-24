@@ -1,0 +1,6 @@
+E:\Projects\TestTask2\TestTask 2\TestTask 2\bin\Debug\TestTask 2.dll
+E:\Projects\TestTask2\TestTask 2\TestTask 2\bin\Debug\TestTask 2.pdb
+E:\Projects\TestTask2\TestTask 2\TestTask 2\obj\Debug\Task2.csproj.AssemblyReference.cache
+E:\Projects\TestTask2\TestTask 2\TestTask 2\obj\Debug\Task2.csproj.CoreCompileInputs.cache
+E:\Projects\TestTask2\TestTask 2\TestTask 2\obj\Debug\TestTask 2.dll
+E:\Projects\TestTask2\TestTask 2\TestTask 2\obj\Debug\TestTask 2.pdb

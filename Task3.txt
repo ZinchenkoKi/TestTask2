@@ -1,0 +1,72 @@
+Таблица продукты
+
+CREATE TABLE products
+(
+    Id SERIAL PRIMARY KEY,
+    ProductName CHARACTER VARYING(30)
+);
+###################################################
+Таблица категории
+
+CREATE TABLE categories
+(
+    Id SERIAL PRIMARY KEY,
+    categoryName CHARACTER VARYING(30)
+);
+
+###################################################
+
+Создание связи монгите ко многим
+CREATE TABLE products
+(
+    products_id SERIAL PRIMARY KEY,
+    products_name VARCHAR
+);
+
+CREATE TABLE category
+(
+    category_id SERIAL PRIMARY KEY,
+    category_name VARCHAR
+);
+
+CREATE TABLE products_category
+(
+    id BIGSERIAL PRIMARY KEY,
+    products_id INTEGER NOT NULL REFERENCES products,
+    category_id   INTEGER NOT NULL REFERENCES category,
+    UNIQUE (products_id, category_id)
+);
+
+###################################################
+
+Заполнение данных
+
+INSERT INTO products (products_id, products_name)
+VALUES (1, 'Хлеб'),
+       (2, 'Булочки'),
+       (3, 'Марк Аврилей НАедине с собой'),
+       (4, 'Чистый код');
+
+INSERT INTO category (category_id, category_name)
+VALUES (1, 'Выпечка'),
+       (2, 'Книги'),
+       (3, 'Хобби'),
+       (4, 'Обучение'),
+	   (5,'Еда');
+
+INSERT INTO products_category (products_id, category_id)
+VALUES (1, 1),
+       (1, 5),
+       (2, 1),
+       (2, 5),
+       (3, 2),
+       (3, 3);
+
+###################################################
+
+Запрос
+
+SELECT products_name, category_name
+FROM products 
+LEFT JOIN products_category pc ON pc.products_id = products.products_id
+LEFT JOIN category c ON c.category_id = pc.category_id;
